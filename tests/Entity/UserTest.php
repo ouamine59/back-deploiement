@@ -13,7 +13,7 @@ class UserTest extends KernelTestCase
         $user->setEmail('tes1t@example.com')
         ->setRoles(['ROLE_USER'])
         ->setPassword('pasAswordA#1')
-        ->setUserName('eeeAAAZzzzzzz')
+        ->setUsername('eeeAAAZzzzzzz')
         ->setPhone(0153403020)
         ->setFirstName('aaaffffffff')
         ->setLastName('aaaaffffff');

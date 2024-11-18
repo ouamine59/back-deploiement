@@ -31,12 +31,12 @@ class UserController extends AbstractController
             if ($jsonData === null) {
                 return new JsonResponse(['result' => 'Invalid JSON format'], Response::HTTP_BAD_REQUEST);
             }
-            if (!isset($jsonData['email'], $jsonData['roles'], $jsonData['password'], $jsonData['username'], $jsonData['phone'], $jsonData['firstName'], $jsonData['lastName'])) {
+            if (!isset($jsonData['email'], $jsonData['password'], $jsonData['username'], $jsonData['phone'], $jsonData['firstName'], $jsonData['lastName'])) {
                 return new JsonResponse(['result' => 'Data missing'], Response::HTTP_BAD_REQUEST);
             }
             $client = new User();
             $client->setEmail($jsonData['email']);
-            $client->setRoles($jsonData['roles']);
+            $client->setRoles(["ROLE_USER"]);
             $hashedPassword = $passwordHasher->hashPassword($client, $jsonData['password']);
             $client->setPassword($hashedPassword);
             $client->setUserName($jsonData['username']);
