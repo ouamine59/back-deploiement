@@ -87,7 +87,7 @@ class AdsController extends AbstractController
             $entityManager->persist($ad);
             $entityManager->flush();
             return new Response(
-                json_encode(['result' => 'Ad created successfully']),
+                json_encode(['result' => 'Ad created successfully', 'id'=>$ad->getId()]),
                 Response::HTTP_CREATED,
                 ['Content-Type' => 'application/json']
             );

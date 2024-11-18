@@ -24,6 +24,7 @@ class MediaObjectController extends AbstractController
         ManagerRegistry $doctrine,
         UploadHandler $uploadHandler
     ): Response {
+        try{
         // Récupérer l'ID de l'annonce depuis le formulaire
         $adsId = $request->request->get('ads');
         if (!$adsId) {
@@ -65,5 +66,8 @@ class MediaObjectController extends AbstractController
             ['message' => 'Image associée avec succès à l\'annonce.'],
             Response::HTTP_CREATED
         );
+    } catch (\Exception $e) {
+        return new JsonResponse(['result' => 'Database error', 'error' => $e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
+    }
     }
 }
