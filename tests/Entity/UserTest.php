@@ -10,10 +10,10 @@ class UserTest extends KernelTestCase
     public function testValidEntity()
     {
         $user = new User();
-        $user->setEmail('test@example.com')
+        $user->setEmail('tes1t@example.com')
         ->setRoles(['ROLE_USER'])
         ->setPassword('pasAswordA#1')
-        ->setUserName('eee1AAAZzzzzzz')
+        ->setUserName('eeeAAAZzzzzzz')
         ->setPhone(0153403020)
         ->setFirstName('aaaffffffff')
         ->setLastName('aaaaffffff');

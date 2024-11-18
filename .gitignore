@@ -21,7 +21,7 @@ phpunit.xml
 ###< symfony/phpunit-bridge ###
 
 ###> symfony/asset-mapper ###
-public/
+
 assets/vendor/
 ###< symfony/asset-mapper ###
 
